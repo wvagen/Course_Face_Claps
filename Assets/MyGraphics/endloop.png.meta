@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: 208ff45a755066144b2987cc56a33ca4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6957565172858754689
+    second: endloop_1
+  - first:
+      213: -2116717624643178621
+    second: endloop_2
+  - first:
+      213: -1592373571536881696
+    second: endloop_3
+  - first:
+      213: -5227348158821513777
+    second: endloop_4
+  - first:
+      213: 3638680603873461239
+    second: endloop_5
+  - first:
+      213: -2823806571858532507
+    second: endloop_6
+  - first:
+      213: -4105575299234315061
+    second: endloop_7
+  - first:
+      213: 4219769597136101539
+    second: endloop0
+  - first:
+      213: -471414136784777801
+    second: endloop_9
+  - first:
+      213: -658142415402039578
+    second: endloop_12
+  - first:
+      213: -9163209734276683946
+    second: endloop1
+  - first:
+      213: -6731297402018892797
+    second: endloop2
+  - first:
+      213: 9214062879454289293
+    second: endloop3
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: endloop_1
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 0
+        width: 37
+        height: 268
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5a08d5478b71047bdd201873774a0c
+      internalID: -6957565172858754689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop_2
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2956ac32cd7d24e4dab1033fb55030f2
+      internalID: -2116717624643178621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop_3
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc842b2eafd5f6043ae5f84344ed39b2
+      internalID: -1592373571536881696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop_4
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f598f0c9a73ccfe4f989341af45be326
+      internalID: -5227348158821513777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop_5
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c99c86a93be8f74b8ed206801c076fa
+      internalID: 3638680603873461239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop_6
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af096ce884b02b49b6c1752e404d2d5
+      internalID: -2823806571858532507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop_7
+      rect:
+        serializedVersion: 2
+        x: 1754
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f192fbedcd7094c8e30c7579673421
+      internalID: -4105575299234315061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50280a596e34b7488b9ce358ef1bfd6
+      internalID: 4219769597136101539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop_9
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023d9a8c55819ad4691d9721001d9133
+      internalID: -471414136784777801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop_12
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 0
+        width: 37
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5ca2c2b2b1fd643ab93dea49d7cb38
+      internalID: -658142415402039578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 827096eff9097a24abb5d51ee94b7c64
+      internalID: -9163209734276683946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop2
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a294f36ca5ccca144a9fc0345e0bface
+      internalID: -6731297402018892797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endloop3
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 0
+        width: 37
+        height: 268
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138c8fb5a8036294d968b4750b0761ad
+      internalID: 9214062879454289293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      endloop0: 4219769597136101539
+      endloop1: -9163209734276683946
+      endloop_2: -2116717624643178621
+      endloop_7: -4105575299234315061
+      endloop_4: -5227348158821513777
+      endloop2: -6731297402018892797
+      endloop_6: -2823806571858532507
+      endloop_9: -471414136784777801
+      endloop_12: -658142415402039578
+      endloop3: 9214062879454289293
+      endloop_5: 3638680603873461239
+      endloop_1: -6957565172858754689
+      endloop_3: -1592373571536881696
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
