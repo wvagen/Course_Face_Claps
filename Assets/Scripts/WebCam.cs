@@ -56,7 +56,7 @@ public class WebCam : MonoBehaviour {
 		destTexture.Apply();
 		// scaling destTexture size to match sampleTexture331x331 that 331*331,
 		// so that you dont get unwanted result because of unmatched pixel data
-		TextureScale.Bilinear (destTexture, 500, 500);
+		TextureScale.Bilinear (destTexture, 331, 331);
 
 		// storing pixel data of destTexture texture using getpixels
 		textureData = destTexture.GetPixels();
@@ -92,12 +92,12 @@ public class WebCam : MonoBehaviour {
 		sampleTexture500x500.SetPixels (curPixels,0);
 		sampleTexture500x500.Apply(false);
 		FaceMappingPanel.material.mainTexture = sampleTexture500x500;
-		Save_File_To_Device_Locally(sampleTexture500x500.EncodeToPNG(), "Photo_0.png");
+		Save_File_To_Device_Locally(sampleTexture500x500.EncodeToPNG(), Constants.SELFIE_PRE_NAME + Constants.SELFIE_EXTENSION);
 	}
 
 	void Save_File_To_Device_Locally(byte[] bytes, string path)
 	{
-		string persistentDataPath = Application.persistentDataPath;
+		string persistentDataPath = Constants.SELFIE_PATH;
         //persistentDataPath = @"/Users/mouadhmkadmi/Documents/Unity\ Projects/Course_Face_Claps/Assets";
         persistentDataPath = Path.Combine(persistentDataPath, path); //For Pc
 		Debug.Log(persistentDataPath);
