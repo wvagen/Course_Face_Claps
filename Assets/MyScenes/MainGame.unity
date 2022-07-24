@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTxt: {fileID: 1866810303}
-  hand: {fileID: 4102317951018884913, guid: 93f4222f34987004195abef114553b2d, type: 3}
+  hand: {fileID: 2693248821245530074, guid: 2e45b8d9663a948bfa4f5d397ceead41, type: 3}
   target: {fileID: 1127447341215999514, guid: 85914c45d1374a04eb0e8808ccb3d522, type: 3}
 --- !u!1 &519420028
 GameObject:

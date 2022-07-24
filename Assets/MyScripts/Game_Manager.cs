@@ -47,11 +47,8 @@ public class Game_Manager : MonoBehaviour
         {
             Spawn_Hand();
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            Destroy_Spawned_Hand();
-        }
     }
+        
 
     public void Incr_Score()
     {
@@ -65,14 +62,6 @@ public class Game_Manager : MonoBehaviour
         mousePosition.z = 0;
         spawnedHand = Instantiate(hand, mousePosition, Quaternion.identity);
         spawnedHand.GetComponent<Hand>().Set_GameMan(this);
-    }
-
-    void Destroy_Spawned_Hand()
-    {
-        if (spawnedHand != null)
-        {
-            Destroy(spawnedHand);
-        }
     }
 
 }

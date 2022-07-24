@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
-
+    public Animator myAnim; 
     Game_Manager myGameMan;
+
+    List<Vector2> handPositions = new List<Vector2>();
+
+    bool isHandAboutToDestory = false;
 
     public void Set_GameMan(Game_Manager myGameMan)
     {
@@ -14,13 +18,42 @@ public class Hand : MonoBehaviour
 
     void Update()
     {
+
         Follow_My_Mouse();
+        if (Input.GetMouseButtonUp(0))
+        {
+            Release();
+        }
     }
+
     void Follow_My_Mouse()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0;
-        transform.position = mousePosition;
+        if (!isHandAboutToDestory)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+            transform.position = mousePosition;
+            handPositions.Add(mousePosition);
+            if (handPositions.Count > 1)
+            {
+                if (handPositions[handPositions.Count - 1].x > handPositions[handPositions.Count - 2].x)
+                {
+                    transform.localScale = new Vector2(-1, 1);
+                }
+                else if (handPositions[handPositions.Count - 1].x < handPositions[handPositions.Count - 2].x)
+                {
+                    transform.localScale *= new Vector2(1, 1);
+                }
+                handPositions.RemoveAt(0);
+            }
+        }
+    }
+
+    public void Release()
+    {
+        isHandAboutToDestory = true;
+        Destroy(gameObject, 0.3f);
+        myAnim.SetBool("isClapping", false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
