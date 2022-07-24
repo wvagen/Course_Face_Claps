@@ -4,17 +4,14 @@ using System.IO;
 
 public class WebCam : MonoBehaviour {
 
-	public WebCamTexture wct;
+	private WebCamTexture wct;
 	public Texture2D maskTexture;
 	public Texture2D sampleTexture500x500;
 	public Renderer FaceMappingPanel;
 
-
 	void Start ()
 	{
-
-		if(Application.platform == RuntimePlatform.Android){
-
+		if (Application.platform == RuntimePlatform.Android){
 			WebCamDevice[] devices = WebCamTexture.devices;
 
 			foreach(WebCamDevice cam in devices)
@@ -32,7 +29,7 @@ public class WebCam : MonoBehaviour {
 		}
 		else{
 			WebCamDevice[] devices = WebCamTexture.devices;
-			string deviceName = devices[0].name;
+			string deviceName = devices[1].name;
 			wct = new WebCamTexture(deviceName, Screen.height, Screen.width, 12);
 			if(wct != null){
 				FaceMappingPanel.material.mainTexture = wct;
@@ -100,21 +97,14 @@ public class WebCam : MonoBehaviour {
 
 	void Save_File_To_Device_Locally(byte[] bytes, string path)
 	{
-		string persistentDataPath = "";
-        persistentDataPath = @"D:\Documents\TMP Folder\";
+		string persistentDataPath = Application.persistentDataPath;
+        //persistentDataPath = @"/Users/mouadhmkadmi/Documents/Unity\ Projects/Course_Face_Claps/Assets";
         persistentDataPath = Path.Combine(persistentDataPath, path); //For Pc
+		Debug.Log(persistentDataPath);
 
 		if (!File.Exists(persistentDataPath))
 		{
 			File.WriteAllBytes(persistentDataPath, bytes);
-		}
-	}
-
-	void OnGUI() {
-
-		if (GUI.Button(new Rect(10, 70, 50, 30), "Click")){
-
-			CutOutFace();
 		}
 	}
 }
