@@ -11,6 +11,8 @@ public class Hand : MonoBehaviour
 
     bool isHandAboutToDestory = false;
 
+    Collider2D previousCollision;
+
     public void Set_GameMan(Game_Manager myGameMan)
     {
         this.myGameMan = myGameMan; 
@@ -58,10 +60,14 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.tag == "Target")
         {
+            if (previousCollision == null || previousCollision != collision)
             myGameMan.Incr_Score();
-            Destroy(collision.gameObject);
+
+            collision.GetComponent<Face>().Klit_Sorfak(transform.localScale.x == 1);
+            previousCollision = collision;
         }
     }
 }

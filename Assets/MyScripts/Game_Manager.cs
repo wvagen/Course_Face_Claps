@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Game_Manager : MonoBehaviour
 {
+    public Animator myAnim;
     public TextMeshProUGUI scoreTxt;
+    public TextMeshProUGUI finalScoreTxt,bestScoreTxt;
 
     public GameObject hand;
     public GameObject target;
@@ -16,11 +19,12 @@ public class Game_Manager : MonoBehaviour
 
     int score = 0;
 
-    const int SPAWN_RATE = 3;
+    float spawnRate = 3;
+    float phaseDuration = 1;
 
     private void Start()
     {
-        nextSpawmTime += SPAWN_RATE;
+        nextSpawmTime += spawnRate;
     }
 
     private void Update()
@@ -35,9 +39,10 @@ public class Game_Manager : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= nextSpawmTime)
         {
-            nextSpawmTime += SPAWN_RATE;
+            nextSpawmTime += spawnRate;
             GameObject tempTarget = Instantiate(target, new Vector2(Random.Range(-5f, 5f), Random.Range(-4f, 4f)), Quaternion.identity);
-            Destroy(tempTarget, 3);
+            tempTarget.GetComponent<Face>().Set_Me(phaseDuration, this);
+            Difficulty_Manager();
         }
     }
 
@@ -48,12 +53,39 @@ public class Game_Manager : MonoBehaviour
             Spawn_Hand();
         }
     }
-        
+      
+    void Difficulty_Manager()
+    {
+        if (spawnRate > 0.3f)
+        {
+            spawnRate -= 0.1f;
+        }
+
+        if (phaseDuration > 0.2f)
+        {
+            phaseDuration -= 0.05f;
+        }
+    }
 
     public void Incr_Score()
     {
         score += 10;
         scoreTxt.text = score.ToString();
+    }
+
+    public void Game_Over()
+    {
+        finalScoreTxt.text = scoreTxt.text;
+        myAnim.Play("Game_Over");
+        int previousBestScore = PlayerPrefs.GetInt("best_score", 0);
+        int bestScore = score > previousBestScore ? score : previousBestScore;
+        bestScoreTxt.text = bestScore.ToString();
+        PlayerPrefs.SetInt("best_score", bestScore);
+    }
+
+    public void Load_Scene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     void Spawn_Hand()

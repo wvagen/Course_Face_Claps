@@ -4,7 +4,7 @@ using System.IO;
 
 public class WebCam : MonoBehaviour {
 
-	private WebCamTexture wct;
+	public WebCamTexture wct;
 	public Texture2D maskTexture;
 	public Texture2D sampleTexture500x500;
 	public Renderer FaceMappingPanel;

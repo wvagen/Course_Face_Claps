@@ -24,6 +24,10 @@ public class Camera_Scene_Manager : MonoBehaviour
         Next_Btn.SetActive(Check_Photo_Index_Existance(webCam.photoIndex + 1) && !Done_Btn.activeSelf);
         Retry_Shot.SetActive(Check_Photo_Index_Existance(webCam.photoIndex));
         Cam_Shot.SetActive(!Check_Photo_Index_Existance(webCam.photoIndex));
+        if (!Check_Photo_Index_Existance(webCam.photoIndex))
+        {
+            webCam.wct.Play();
+        }
     }
 
     bool Check_Photo_Index_Existance(int photoIndex)
