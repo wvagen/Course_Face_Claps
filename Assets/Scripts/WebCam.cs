@@ -9,6 +9,10 @@ public class WebCam : MonoBehaviour {
 	public Texture2D sampleTexture500x500;
 	public Renderer FaceMappingPanel;
 
+	public GameObject doneBtn;
+
+	public int photoIndex = 0;
+
 	void Start ()
 	{
 		if (Application.platform == RuntimePlatform.Android){
@@ -92,7 +96,7 @@ public class WebCam : MonoBehaviour {
 		sampleTexture500x500.SetPixels (curPixels,0);
 		sampleTexture500x500.Apply(false);
 		FaceMappingPanel.material.mainTexture = sampleTexture500x500;
-		Save_File_To_Device_Locally(sampleTexture500x500.EncodeToPNG(), Constants.SELFIE_PRE_NAME + Constants.SELFIE_EXTENSION);
+		Save_File_To_Device_Locally(sampleTexture500x500.EncodeToPNG(), Constants.SELFIE_PRE_NAME + photoIndex + Constants.SELFIE_EXTENSION);
 	}
 
 	void Save_File_To_Device_Locally(byte[] bytes, string path)
