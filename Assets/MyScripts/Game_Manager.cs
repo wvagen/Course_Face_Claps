@@ -8,14 +8,16 @@ public class Game_Manager : MonoBehaviour
 {
     public Animator myAnim;
     public TextMeshProUGUI scoreTxt;
-    public TextMeshProUGUI finalScoreTxt,bestScoreTxt;
+    public TextMeshProUGUI finalScoreTxt, bestScoreTxt;
 
     public GameObject hand;
     public GameObject target;
 
+    public Audio_Manager audioMan;
+
     GameObject spawnedHand;
 
-    float timer,nextSpawmTime;
+    float timer, nextSpawmTime;
 
     int score = 0;
 
@@ -24,7 +26,9 @@ public class Game_Manager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         nextSpawmTime += spawnRate;
+        audioMan = FindObjectOfType<Audio_Manager>();
     }
 
     private void Update()
@@ -53,7 +57,7 @@ public class Game_Manager : MonoBehaviour
             Spawn_Hand();
         }
     }
-      
+
     void Difficulty_Manager()
     {
         if (spawnRate > 0.3f)
@@ -94,6 +98,7 @@ public class Game_Manager : MonoBehaviour
         mousePosition.z = 0;
         spawnedHand = Instantiate(hand, mousePosition, Quaternion.identity);
         spawnedHand.GetComponent<Hand>().Set_GameMan(this);
+        audioMan.Play_Tahwida_SFX();
     }
 
 }

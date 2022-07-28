@@ -31,6 +31,7 @@ public class Face : MonoBehaviour
     {
         if (phaseCount < faceLevels.Length - 2 && isAlive)
         {
+            gameMan.audioMan.Play_Crack_Sounds(phaseCount);
             timer = 0;
             phaseCount++;
             transform.localScale += Vector3.one * 0.3f;

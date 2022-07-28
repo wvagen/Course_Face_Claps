@@ -68,6 +68,8 @@ public class Hand : MonoBehaviour
 
             collision.GetComponent<Face>().Klit_Sorfak(transform.localScale.x == 1);
             previousCollision = collision;
+
+            myGameMan.audioMan.Play_Slap_SFX();
         }
     }
 }
