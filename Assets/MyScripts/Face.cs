@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class Face : MonoBehaviour
 {
@@ -10,12 +11,28 @@ public class Face : MonoBehaviour
     bool isAlive = true;
 
     Game_Manager gameMan;
-    float timer,phaseDuration;
+    float timer, phaseDuration;
     int phaseCount = 0;
 
     private void Start()
     {
+        LoadFaces();
         currentSpriteRend.sprite = faceLevels[phaseCount];
+    }
+
+    private void LoadFaces()
+    {
+        for (int i = 0; i < Constants.PHOTOS_LENGTH_AMOUNT; i++)
+        {
+            string selfiePath = Path.Combine(Constants.SELFIE_PATH, Constants.SELFIE_PRE_NAME + i + Constants.SELFIE_EXTENSION);
+            if (File.Exists(selfiePath))
+            {
+                byte[] data = File.ReadAllBytes(selfiePath);
+                Texture2D tex = new Texture2D(20, 20);
+                tex.LoadImage(data);
+                faceLevels[i] = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 250);
+            }
+        }
     }
 
     private void Update()

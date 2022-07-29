@@ -4,26 +4,35 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using Kakera;
+using TMPro;
 
 
 public class Camera_Scene_Manager : MonoBehaviour
 {
     public PickerController webCam;
     public Renderer previewRend;
+    public TextMeshProUGUI instructionTxt;
 
     public GameObject Previous_Btn, Next_Btn, Retry_Shot, Cam_Shot, Done_Btn;
+    public string[] instructions;
 
+    private void Start()
+    {
+        Update_Inputs();
+    }
 
     public void Update_Inputs()
     {
         Load_Selfie();
         if (webCam.photoIndex + 1 >= Constants.PHOTOS_LENGTH_AMOUNT) Done_Btn.SetActive(true);
         Previous_Btn.SetActive(Check_Photo_Index_Existance(webCam.photoIndex - 1));
-        Next_Btn.SetActive(Check_Photo_Index_Existance(webCam.photoIndex) && !Done_Btn.activeSelf);
+        Next_Btn.SetActive(Check_Photo_Index_Existance(webCam.photoIndex + 1));
+        Done_Btn.SetActive(Check_Photo_Index_Existance(webCam.photoIndex) && !Next_Btn.activeSelf);
 
         Retry_Shot.SetActive(Check_Photo_Index_Existance(webCam.photoIndex));
         Cam_Shot.SetActive(!Check_Photo_Index_Existance(webCam.photoIndex));
         if (!Check_Photo_Index_Existance(webCam.photoIndex)) previewRend.material.mainTexture = null;
+        instructionTxt.text = instructions[webCam.photoIndex];
     }
 
     bool Check_Photo_Index_Existance(int photoIndex)
@@ -51,6 +60,11 @@ public class Camera_Scene_Manager : MonoBehaviour
         Update_Inputs();
     }
 
+    public void Home_Btn()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Next_Btn_Click()
     {
         webCam.photoIndex++;
@@ -65,7 +79,9 @@ public class Camera_Scene_Manager : MonoBehaviour
 
     public void Done_Btn_Click()
     {
-        SceneManager.LoadScene("MainGame");
+        if (webCam.photoIndex == Constants.PHOTOS_LENGTH_AMOUNT - 1)
+            SceneManager.LoadScene("MainGame");
+        else Next_Btn_Click();
     }
 
 }
