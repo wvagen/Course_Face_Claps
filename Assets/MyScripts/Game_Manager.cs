@@ -12,6 +12,7 @@ public class Game_Manager : MonoBehaviour
 
     public GameObject hand;
     public GameObject target;
+    public Transform targetParent;
 
     public Audio_Manager audioMan;
 
@@ -44,7 +45,7 @@ public class Game_Manager : MonoBehaviour
         if (timer >= nextSpawmTime)
         {
             nextSpawmTime += spawnRate;
-            GameObject tempTarget = Instantiate(target, new Vector2(Random.Range(-5f, 5f), Random.Range(-4f, 4f)), Quaternion.identity);
+            GameObject tempTarget = Instantiate(target, new Vector2(Random.Range(-5f, 5f), Random.Range(-4f, 4f)), Quaternion.identity, targetParent);
             tempTarget.GetComponent<Face>().Set_Me(phaseDuration, this);
             Difficulty_Manager();
         }

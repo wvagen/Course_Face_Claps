@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 
 public class Face : MonoBehaviour
 {
+
+    public Image currentImg; 
     public Sprite[] faceLevels;
-    public SpriteRenderer currentSpriteRend;
 
     bool isAlive = true;
 
@@ -17,7 +19,7 @@ public class Face : MonoBehaviour
     private void Start()
     {
         LoadFaces();
-        currentSpriteRend.sprite = faceLevels[phaseCount];
+        currentImg.sprite = faceLevels[phaseCount];
     }
 
     private void LoadFaces()
@@ -52,7 +54,7 @@ public class Face : MonoBehaviour
             timer = 0;
             phaseCount++;
             transform.localScale += Vector3.one * 0.3f;
-            currentSpriteRend.sprite = faceLevels[phaseCount];
+            currentImg.sprite = faceLevels[phaseCount];
         }
         else if (phaseCount == faceLevels.Length - 2)
         {
@@ -64,7 +66,7 @@ public class Face : MonoBehaviour
     public void Klit_Sorfak(bool isLookingLeft)
     {
         isAlive = false;
-        currentSpriteRend.sprite = faceLevels[faceLevels.Length - 1];
+        currentImg.sprite = faceLevels[faceLevels.Length - 1];
         Vector2 currentScale = transform.localScale;
         currentScale.x *= isLookingLeft ? 1 : -1;
         transform.localScale = currentScale;
