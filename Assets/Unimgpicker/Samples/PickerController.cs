@@ -40,6 +40,7 @@ namespace Kakera
                 Debug.LogError("Failed to load texture url:" + url);
             }
 
+            texture = Resize(texture, 200, 200);
             Save_File_To_Device_Locally(texture.EncodeToPNG(), Constants.SELFIE_PRE_NAME + photoIndex + Constants.SELFIE_EXTENSION);
         }
 
@@ -58,6 +59,17 @@ namespace Kakera
             File.WriteAllBytes(persistentDataPath, bytes);
 
             camSceneMan.Update_Inputs();
+        }
+
+        Texture2D Resize(Texture2D texture2D, int targetX, int targetY)
+        {
+            RenderTexture rt = new RenderTexture(targetX, targetY, 24);
+            RenderTexture.active = rt;
+            Graphics.Blit(texture2D, rt);
+            Texture2D result = new Texture2D(targetX, targetY);
+            result.ReadPixels(new Rect(0, 0, targetX, targetY), 0, 0);
+            result.Apply();
+            return result;
         }
     }
 }
