@@ -8,6 +8,7 @@ public class Hand : MonoBehaviour
     Game_Manager myGameMan;
 
     List<Vector2> handPositions = new List<Vector2>();
+    Vector2 initScale;
 
     bool isHandAboutToDestory = false;
 
@@ -16,6 +17,11 @@ public class Hand : MonoBehaviour
     public void Set_GameMan(Game_Manager myGameMan)
     {
         this.myGameMan = myGameMan; 
+    }
+
+    private void Start()
+    {
+        initScale = transform.localScale;
     }
 
     void Update()
@@ -40,11 +46,11 @@ public class Hand : MonoBehaviour
             {
                 if (handPositions[handPositions.Count - 1].x > handPositions[handPositions.Count - 2].x)
                 {
-                    transform.localScale = new Vector2(-1, 1);
+                    transform.localScale = new Vector2(-initScale.x, initScale.y);
                 }
                 else if (handPositions[handPositions.Count - 1].x < handPositions[handPositions.Count - 2].x)
                 {
-                    transform.localScale *= new Vector2(1, 1);
+                    transform.localScale = new Vector2(initScale.x, initScale.y);
                 }
                 handPositions.RemoveAt(0);
             }
@@ -66,7 +72,7 @@ public class Hand : MonoBehaviour
             if (previousCollision == null || previousCollision != collision)
             myGameMan.Incr_Score();
 
-            collision.GetComponent<Face>().Klit_Sorfak(transform.localScale.x == 1);
+            collision.GetComponent<Face>().Klit_Sorfak(transform.localScale.x > 0);
             previousCollision = collision;
 
             myGameMan.audioMan.Play_Slap_SFX();

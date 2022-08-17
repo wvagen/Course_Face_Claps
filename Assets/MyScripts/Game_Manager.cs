@@ -45,7 +45,7 @@ public class Game_Manager : MonoBehaviour
         if (timer >= nextSpawmTime)
         {
             nextSpawmTime += spawnRate;
-            GameObject tempTarget = Instantiate(target, new Vector2(Random.Range(-5f, 5f), Random.Range(-4f, 4f)), Quaternion.identity, targetParent);
+            GameObject tempTarget = Instantiate(target, new Vector2(Random.Range(-7f, 7f), Random.Range(-3f, 3f)), Quaternion.identity, targetParent);
             tempTarget.GetComponent<Face>().Set_Me(phaseDuration, this);
             Difficulty_Manager();
         }
@@ -97,7 +97,7 @@ public class Game_Manager : MonoBehaviour
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
-        spawnedHand = Instantiate(hand, mousePosition, Quaternion.identity);
+        spawnedHand = Instantiate(hand, mousePosition, Quaternion.identity,targetParent);
         spawnedHand.GetComponent<Hand>().Set_GameMan(this);
         audioMan.Play_Tahwida_SFX();
     }

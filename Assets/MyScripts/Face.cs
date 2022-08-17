@@ -60,6 +60,7 @@ public class Face : MonoBehaviour
         {
             Time.timeScale = 0;
             gameMan.Game_Over();
+            Destroy(this);
         }
     }
 
